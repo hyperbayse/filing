@@ -6,6 +6,8 @@ Author: Sheriff Abdulfatai
 
 
 from commands.sort import sort
+from commands.search import search
+from commands.count import count
 
 print("** Thanks for using filing!"
       "\nit is an open-source app that can be used to do some basic document manipulation\n"
@@ -13,10 +15,11 @@ print("** Thanks for using filing!"
 
 commands = ['sort', 'count', 'search', 'extract']
 extension = ['docs', 'txt', 'pdf', 'csv']
+no_save = ['count', 'search']
 
 # open the provided file for text manipulation
 while True:
-    filename = input("\ninput the file you are working with :- ")
+    filename = input("\nFile you are working with or exit to exit:- ")
     print()
 
     if filename == 'exit':
@@ -27,7 +30,7 @@ while True:
 
     # check if the file extension is supported
     if extn not in extension:
-        print("file ({}) not supported".format(filename))
+        print("File ({}) with .{} not supported".format(filename, extn))
     else:
         break
         
@@ -35,19 +38,24 @@ try:
     with open(f"{filename}", 'r') as file:
         while True:
             # check for the input command
-            command = input("enter your operation :- ")
-            save_name = input("save file as :- ")
+            command = input("Enter your operation:- ")
+            if command not in no_save and command in commands:
+                save_name = input("Save file as:- ")
 
             if command == "quit":
                 break
 
             if command not in commands:
-                print("command not supported now \"will be updated in future\"")
+                print("Command not supported now \"will be updated in future\"")
             else:
                 break
         
         if command == "sort":
             sort(file, save_name)
+        if command == "search":
+            search(file)
+        if command == "count":
+            count(file)
         
 except FileNotFoundError:
-    print("file not found\ncheck your input")
+    print("f\File not found\nCheck your input")

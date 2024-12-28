@@ -13,7 +13,7 @@ def sort(file, save_name):
         lines.append(buffer)
     lines[len(lines) - 1] = lines[len(lines) - 1] + "\n"
 
-    order = input("sort *asce* for ascending, *desc* for descending and *q* to terminate:- ")
+    order = input("Sort *asce* for ascending, *desc* for descending and *q* to terminate:- ")
     if order == "asce":
         lines.sort()
     elif order == "desc":
@@ -21,7 +21,7 @@ def sort(file, save_name):
     elif order == "q":
         return
     else:
-        print("order operation not correct!\n")
+        print("Order operation not correct!\n")
         sort(file, save_name)
 
     # write the sorted into file
