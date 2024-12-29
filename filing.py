@@ -21,7 +21,7 @@ print("** Thanks for using filing!"
       "\nit is an open-source app that can be used to do some basic document manipulation\n"
       "among the currently supported commands are -sort- -count- -search- -extract- **")
 
-commands = ['sort', 'count', 'search', 'extract']
+commands = ['sort', 'count', 'search', 'display']
 
 # open the provided file for text manipulation
 while True:
@@ -63,6 +63,8 @@ try:
             search(file)
         if command == "count":
             count(file)
+        if command == "display":
+            display(file)
         
 except FileNotFoundError:
     print("f\File not found\nCheck your input")
