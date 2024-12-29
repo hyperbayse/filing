@@ -18,8 +18,9 @@ from commands.count import count
 
 
 print("** Thanks for using filing!"
-      "\nit is an open-source app that can be used to do some basic document manipulation\n"
-      "among the currently supported commands are -sort- -count- -search- -extract- **")
+      "\nIt is an open-source app that can be used to access some basic document content\n"
+      "Among the currently supported functions are -sort- -count- -search- -display-"
+      "\nAnd supported file extensions are .pdf, .txt, .docx **")
 
 commands = ['sort', 'count', 'search', 'display']
 
@@ -28,16 +29,15 @@ while True:
     filename = input("\nEnter file you are working with or exit to quit:- ")
     print()
 
-    if filename == 'exit':
-        exit()
-    # filename = "text.txst"
-
     extn = extn_checker(filename)
 
-    if os.path.exists(filename):
+    if filename == 'exit':
+        exit()
+
+    if os.path.exists(filename) and type(extn) == str:
         break
 
-# convert all text to .txt first
+# convert all text to tmp .txt first
 if extn == "pdf":
     filename = pdf_extractor(filename)
 if extn == "docx":
@@ -67,7 +67,7 @@ try:
             display(file)
         
 except FileNotFoundError:
-    print("f\File not found\nCheck your input")
+    print("File not found\nCheck your input")
 
 # ensure the buffer file is deleted
 try:

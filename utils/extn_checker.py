@@ -7,7 +7,7 @@ import os
 
 def extn_checker(file):
     """ checks and confirm if the file is supported """
-    extension = ['docs', 'txt', 'pdf']
+    extension = ['docx', 'txt', 'pdf']
 
     name, dot, extn = file.partition('.')
 
@@ -16,4 +16,5 @@ def extn_checker(file):
         print("File ({}) with .{} not supported".format(file, extn))
     elif not os.path.exists(file):
         print("File does not exist")
-    return extn
+    else:
+        return extn

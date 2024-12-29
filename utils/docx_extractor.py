@@ -11,5 +11,6 @@ def docx_extractor(file):
     doc = Document(file)
     with open(".tmpbuffer.txt", 'w') as write:
         for para in doc.paragraphs:
+            para.text += '\n'
             write.write(para.text)
     return ".tmpbuffer.txt"
