@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Module: commands.search.py
+Module: commands.count.py
 Author: Sheriff Abdulfatai
 """
 

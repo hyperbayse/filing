@@ -4,10 +4,12 @@ Module: commands.sort.py
 Author: Sheriff Abdulfatai
 """
 
-def sort(file, save_name):
+def sort(file):
     """
     the function that takes in the file from buffer and
     do a sort activity on it then write it back to file"""
+    save_name = input("Save as:- ")
+    
     lines = []
     for buffer in file.readlines():
         lines.append(buffer)
