@@ -4,7 +4,10 @@ Module: filing.py
 Author: Sheriff Abdulfatai
 """
 
+import sys
 import os
+
+sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
 #utils
 from utils.pdf_extractor import pdf_extractor
@@ -15,6 +18,7 @@ from utils.docx_extractor import docx_extractor
 from commands.sort import sort
 from commands.search import search
 from commands.count import count
+from commands.display import display
 
 
 print("** Thanks for using filing!"

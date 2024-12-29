@@ -8,10 +8,13 @@ This app will handle various text manipulation function ranging from text extrac
 
 But currently, below are the already integrated function in the application:
 
-**sort:** is used for quick text sorting in a file either by ascending or descending
-**search:** used to search for a particular text string in a file and extract the information related for such text for easy access
-**count:** best used to count the number of occurence a particular text string appears in a file
-**display:** used to print out the text content of a file to the terminal. It is mostly suited for terminal user.
+## Installation
+By simply 
+
+-   **sort:** is used for quick text sorting in a file either by ascending or descending.
+-   **search:** used to search for a particular text string in a file and extract the information related for such text for easy access.
+-   **count:** best used to count the number of occurence a particular text string appears in a file.
+-   **display:** used to print out the text content of a file to the terminal. It is mostly suited for terminal user.
 
 while others will be shipped in very soon
 

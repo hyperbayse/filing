@@ -4,6 +4,6 @@ Module: commands.display.py
 Author: Sheriff Abdulfatai
 """
 
-def count(file):
+def display(file):
     for line in file.readlines():
         print(line)
