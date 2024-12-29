@@ -6,4 +6,5 @@ Author: Sheriff Abdulfatai
 
 def display(file):
     for line in file.readlines():
-        print(line)
+        print(line, end="")
+    print()

@@ -4,15 +4,13 @@ Module: utils.pdf_extractor.py
 Author: Sheriff Abdulfatai
 """
 
-from PyPDF2 import PdfFileReader
+from PyPDF2 import PdfReader
 
 def pdf_extractor(file):
-    with open(file, 'rb') as buffer:
-        pdf = PdfFileReader(buffer)
-        readable = []
-        for page in pdf.pages:
-            readable.append(page.extract_text())
+    reader = PdfReader(file)
+
     with open(".tmpbuffer.txt", 'w') as write:
-        for x in readable:
-            write.write(x)
+        for page_number, page in enumerate(reader.pages, start=1):
+            text = page.extract_text()
+            write.write(text)
     return ".tmpbuffer.txt"

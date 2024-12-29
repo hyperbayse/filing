@@ -33,10 +33,10 @@ while True:
     filename = input("\nEnter file you are working with or exit to quit:- ")
     print()
 
-    extn = extn_checker(filename)
-
     if filename == 'exit':
-        exit()
+        sys.exit()
+
+    extn = extn_checker(filename)
 
     if os.path.exists(filename) and type(extn) == str:
         break
@@ -53,11 +53,12 @@ try:
             # check for the input command
             command = input("Enter your operation:- ")
 
-            if command == "quit":
-                break
+            if command == "exit":
+                sys.exit()
 
             if command not in commands:
-                print("Command not supported now \"will be updated in future\"")
+                print("Operation not supported")
+                print("Re-enter operation or exit to quit")
             else:
                 break
         

@@ -9,7 +9,8 @@ This app will handle various text manipulation function ranging from text extrac
 But currently, below are the already integrated function in the application:
 
 ## Installation
-By simply 
+
+The application is ready to use by simply downloading the executable 'filing' from the dist file in the repo
 
 -   **sort:** is used for quick text sorting in a file either by ascending or descending.
 -   **search:** used to search for a particular text string in a file and extract the information related for such text for easy access.
